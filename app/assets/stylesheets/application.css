@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body * {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+}
+
+.fa-heart-o:before {
+    color: red;
+}
+
+.fa-bookmark-o:before {
+    color: yellow;
+}
+
+.main-image {
+    width: 100%;
+}
+
+.featurePic {
+    margin-top: 80px;
+}
+
+.heart-banner-container, .show-heart-banner-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.heart-num-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.heart {
+    margin-right: 15px;
+}
+
+.most-liked {
+    margin-top: -23px;
+}
+
+.banner {
+    justify-content: flex-end;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-icons, .more-articles {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 30px;
+}
+
+.footer-icons>i {
+    margin: 0 20px;
+}
+
+
+/******************************************/
+
+.post-author-date-container {
+    display: flex;
+    /*border: thin solid red;*/
+}
+
+.post-date-show {
+    /*border: thin solid blue;*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.show-heart-banner-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.profile-container {
+    display: flex;
+    text-align: flex-start;
+    justify-content: center;
+}
+
+.author-pic {
+    height: 28vmin;
+    border: thin solid gainsboro;
+}
+
+.full-name {
+    font-size: 16px;
+}
+
+.comment-author-pic {
+    height: 20vmin;
+    border: thin solid gainsboro;
+}
+
+
+/*******************************************/
+
+.author-container {
+    margin: 0 10vmin;
+}
+
+.author-row {
+    margin: 0 80px;
+}
+
+.topbar {
+    margin-top: 50px;
+}
+
+.right {
+    float: right;
+    padding-top: 25px;
+}
+
+.pad {
+    margin-left: 20px;
+}
+
+.posted-comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.posted-commenter-info {
+    margin-right: 5px;
+}
+
+@media(max-width: 992px) {
+    .most-liked {
+        display: none;
+    }
+    .post-category-1 {
+        display: none;
+    }
+}
+
+@media(min-width: 992px) {
+    .break {
+        display: none;
+    }
+    .post-category-2 {
+        display: none;
+    }
+    .show-post-text, .post-category-1, .post-date-show, .show-heart-banner-container {
+        margin: 0 15vmin;
+    }
+    /* .media is a bootstrap class */
+    .media {
+        margin-left: ;
+        margin-right: ;
+    }
+    /* ..form-group is a bootstrap class */
+    /*.comment-form-body, .comment-form-fullname {
+        margin: 0 25vmin;
+    }
+    .form-commenter-name {
+        margin: 0 25vmin;
+    }
+    .comment-hr {
+        margin: 0 25vmin;
+    }
+    .posted-comment {
+        margin: 0 25vmin;
+    }*/
+}

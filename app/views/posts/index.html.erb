@@ -1,0 +1,102 @@
+<br><br><br>
+<h1>Welcome to my Blog</h1>
+
+ <div class="container-fluid">
+        <div class="row featurePic">
+            <div class="col-xs-12 col-md-8">
+                <div class="">
+                    <img class="img-responsive img-rounded main-image" <%= image_tag("1.jpg") %>
+                </div>
+                <div class="heart-banner-container">
+                    <div class="heart-num-container">
+                        <div class="heart"><i class="fa fa-heart-o"></i></div>
+                        <div class="">1042</div>
+                    </div>
+                    <div class="banner"><i class="fa fa-bookmark-o"></i></div>
+                </div>
+                <div class="post-title">
+                    <h2><%= @recent_post.title %></h2>
+                </div>
+                <div class="post-text">
+                    <p><%= @recent_post.body %></p>
+                </div>
+                <br>
+                <div class="post-author">
+                    < Post Author Name>
+                </div>
+                <div class="post-date">
+                    <%= @recent_post.created_at %>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-xs-4 most-liked">
+                <h2>Most Liked</h2>
+                <div class="panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- post 2 -->
+         <div class="row">
+           <% @remaining_posts.each do |post| %>
+            <div class="col-xs-12 col-md-4">
+                <div class="">
+                  <%= link_to post_path(post.id) do %>
+                      <%= image_tag "#{rand(1..6)}.jpg", class: "img-responsive img-rounded" %>
+                        <!-- <img class="img-responsive img-rounded" <%= image_tag("2.jpg") %> -->
+                  <% end %>
+                </div>
+                <div class="heart-banner-container">
+                    <div class="heart-num-container">
+                        <div class="heart"><i class="fa fa-heart-o"></i></div>
+                        <div class="">456</div>
+                    </div>
+                    <div class=""><i class="fa fa-bookmark-o"></i></div>
+                </div>
+                <div class="post-title">
+                    <h2><%= post.title %></h2>
+                </div>
+                <div class="post-text">
+                    <p><%= post.body %></p>
+                </div>
+                <br>
+                <div class="post-author">
+                    < Post Author Name>
+                </div>
+                <div class="post-date">
+                    <%= post.created_at %>
+                </div>
+                <br>
+            </div>
+        <% end %>
+      </div>
+
+         <!-- footer -->
+
+        <div class="row footer-container">
+            <div class="col-xs-12 col-md-12 more-articles">
+                <a href="#"><h3>More Articles</h3></a>
+            </div>
+            <br>
+           <div class="col-xs-12 col-md-12 footer-icons">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-medium" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <br>
+            </div>
+        </div>
