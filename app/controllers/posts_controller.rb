@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
    def create
       @post = Post.new(post_params)
+      @post.user = current_user
       if @post.save
         redirect_to post_path(@post)
       else
@@ -30,10 +31,14 @@ class PostsController < ApplicationController
    end
 
   def destroy
-   @post = Post.find(params[:post_id])
-   @comment = @post.comments.find(params[:id])
-   @comment.destroy
-   redirect_to post_path(@post)
+      if can? :destroy, @post
+         @post = Post.find(params[:post_id])
+         @comment = @post.comments.find(params[:id])
+         @comment.destroy
+         redirect_to root_path
+     else
+        redirect_to root_path, alert: 'access denied'
+     end
   end
 
   #  comment_params = params.require(:comment).permit(:body)

@@ -1,5 +1,4 @@
 <br><br><br>
-<h1>Welcome to my Blog</h1>
 
  <div class="container-fluid">
         <div class="row featurePic">
@@ -14,18 +13,25 @@
                     </div>
                     <div class="banner"><i class="fa fa-bookmark-o"></i></div>
                 </div>
+                <div class="well">
                 <div class="post-title">
                     <h2><%= @recent_post.title %></h2>
-                </div>
+                </div><hr>
                 <div class="post-text">
                     <p><%= @recent_post.body %></p>
                 </div>
+                </div>
                 <br>
                 <div class="post-author">
-                    < Post Author Name>
+                    <%= current_user %>
                 </div>
                 <div class="post-date">
                     <%= @recent_post.created_at %>
+                </div>
+                <div class="post-delete pull-right">
+                  <%= link_to 'Delete', root_path,
+                  method:  :delete,
+                  data: {confirm: 'Are you sure?'} %>
                 </div>
                 <br>
             </div>
@@ -66,9 +72,10 @@
                     </div>
                     <div class=""><i class="fa fa-bookmark-o"></i></div>
                 </div>
+                <div class="well">
                 <div class="post-title">
                     <h2><%= post.title %></h2>
-                </div>
+                </div><hr>
                 <div class="post-text">
                     <p><%= post.body %></p>
                 </div>
@@ -76,9 +83,13 @@
                 <div class="post-author">
                     < Post Author Name>
                 </div>
-                <div class="post-date">
-                    <%= post.created_at %>
+                <!-- <div class="post-date">
+                </div> -->
+                <div class="post-delete pull-right">
+                  <%= link_to 'Delete', post_path(post), method:  :delete, data: {confirm: 'Are you sure?'} %> |
+                  <%= post.created_at %>
                 </div>
+              </div>
                 <br>
             </div>
         <% end %>
